@@ -4,7 +4,6 @@ export type DiceGameResult = {
     win: boolean;
     playerScore: number;
     opponentScore: number;
-
 }
 
 export function play() : DiceGameResult {

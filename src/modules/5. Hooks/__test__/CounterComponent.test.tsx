@@ -1,5 +1,6 @@
 import { cleanup, fireEvent, render, screen } from "@testing-library/react";
 import { CounterComponent, minusButtonId, plusButtonId, valueId } from "../CounterComponent";
+import '@testing-library/jest-dom/extend-expect';
 
 const mockIncrease = jest.fn();
 const mockDecrease = jest.fn();
@@ -25,14 +26,13 @@ describe("<CounterComponent/>", () => {
     it("Should be rendered", () => {
         render(<CounterComponent/>);
 
-        expect(screen.getByTestId(plusButtonId)).toBeVisible();
-        expect(screen.getByTestId(minusButtonId)).toBeVisible();
-        expect(screen.getByTestId(valueId)).toBeVisible();
+        expect(screen.getByTestId(plusButtonId)).toBeDefined();
+        expect(screen.getByTestId(minusButtonId)).toBeDefined();
+        expect(screen.getByTestId(valueId)).toBeDefined();
     });
 
     it("Should show value", () => {
         mockValue.mockReturnValue(42);
-
         render(<CounterComponent/>);
 
         expect(screen.getByTestId(valueId)).toHaveTextContent("42");

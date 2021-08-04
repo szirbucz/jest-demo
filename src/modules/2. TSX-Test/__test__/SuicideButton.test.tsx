@@ -1,5 +1,6 @@
 import { fireEvent, render, screen } from "@testing-library/react";
 import { SuicideButton } from "../SuicideButton";
+import '@testing-library/jest-dom/extend-expect';
 
 const suicideButtonId = "suicide-button";
 

@@ -1,5 +1,6 @@
 import { fireEvent, render, screen } from "@testing-library/react";
 import { CounterComponent, minusButtonId, plusButtonId, valueId } from "../CounterComponent";
+import '@testing-library/jest-dom/extend-expect';
 
 describe("<CounterComponent/>", () => {
 
